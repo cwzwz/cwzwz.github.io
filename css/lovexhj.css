@@ -530,9 +530,11 @@ img {
     overflow: hidden;
 }
 
+/* 👇 这里修改：自适应宽度，电脑端最大900px，手机自动缩 */
 .diary-wrapper {
-    width: 900px;
-    height: 300px;
+    width: 95%;          /* 手机端占95%屏幕 */
+    max-width: 900px;    /* 电脑端最大900px（你原来的宽度） */
+    height: 500px;
     margin: 0 auto;
     padding-top: 25px;
 }
@@ -552,7 +554,7 @@ img {
     height: 500px;
 }
 
-/* 日记卡片样式完全和 page1 保持一致 */
+/* 日记卡片样式完全和你原版保持一致 */
 .diary-card {
     width: 100%;
     height: 100%;
@@ -583,7 +585,7 @@ img {
 
     white-space: pre-line;
     word-break: break-all;
-    text-indent: 2em;
+    text-indent: 2em; /* 每段空两格 */
 }
 
 /* 滚动条美化 */
