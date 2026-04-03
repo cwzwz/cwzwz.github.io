@@ -3,12 +3,12 @@ new TypeIt("#tqyxhj", {
         cursorSpeed: 1000,
         speed: 100
     })
-    .type("吴泽 && 曹维芝")
+    .type("吴泽 ❤ 曹维芝")
     .pause(2000)
     .delete(null, {
         delay: 500
     })
-    .type("相识5年啦...")
+    .type("属于我们的故事...")
     .pause(3000)
     .go();
 

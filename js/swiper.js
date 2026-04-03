@@ -26,3 +26,19 @@ var swiper = new Swiper('.swiper-container-lovexhj3', {
     nextButton: '.swiper-button-next-lovexhj3',
     prevButton: '.swiper-button-prev-lovexhj3'
 });
+
+// ÐÇÃ¨ÈÕ¼ÇÂÖ²¥
+var swiperDiaryMe = new Swiper('.swiper-container-diary-me', {
+    pagination: '.swiper-pagination-diary-me',
+    paginationClickable: true,
+    spaceBetween: 30,
+    loop: false
+});
+
+// ¹·Ö¥ÈÕ¼ÇÂÖ²¥
+var swiperDiaryYou = new Swiper('.swiper-container-diary-you', {
+    pagination: '.swiper-pagination-diary-you',
+    paginationClickable: true,
+    spaceBetween: 30,
+    loop: false
+});

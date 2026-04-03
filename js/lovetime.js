@@ -24,5 +24,18 @@ function lovetime() {
         minutes) / seconds)
     document.getElementById("lovetime").innerHTML = "我们已经在一起 " + diffYears + "年" + diffDays + "天" +
         diffHours + "小时" + diffMinutes + "分钟" + diffSeconds + "秒啦"
+
+
+var knownTime = Date.UTC(2021, 01, 25, 05, 20, 00)
+    var diffKnown = t2 - knownTime
+    var knownYears = Math.floor(diffKnown / years)
+    var knownDays = Math.floor((diffKnown / days) - knownYears * 365)
+    var knownHours = Math.floor((diffKnown - (knownYears * 365 + knownDays) * days) / hours)
+    var knownMinutes = Math.floor((diffKnown - (knownYears * 365 + knownDays) * days - knownHours * hours) / minutes)
+    var knownSeconds = Math.floor((diffKnown - (knownYears * 365 + knownDays) * days - knownHours * hours - knownMinutes * minutes) / seconds)
+
+    document.getElementById("knowntime").innerHTML = "我们已经相识了 " + knownYears + "年" + knownDays + "天" + knownHours + "小时" + knownMinutes + "分钟" + knownSeconds + "秒啦"
+
+
 }
 lovetime()

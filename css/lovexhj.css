@@ -506,3 +506,247 @@ img {
         left: -15px;
     }
 }
+
+/* 页面整体布局 */
+/* 分页5 - 星猫日记 */
+.page5 {
+    background-image: linear-gradient(to right, rgba(0, 162, 255, 0.4), rgba(255, 0, 255, 0.2)), url(../images/bg5.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 800px;
+    overflow: hidden;
+}
+
+/* 分页6 - 狗芝日记 */
+.page6 {
+    background-image: linear-gradient(to right, rgba(0, 162, 255, 0.4), rgba(255, 0, 255, 0.2)), url(../images/bg6.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 800px;
+    overflow: hidden;
+}
+
+.diary-wrapper {
+    width: 900px;
+    height: 300px;
+    margin: 0 auto;
+    padding-top: 25px;
+}
+
+.diary-wrapper h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px black;
+}
+
+/* 轮播容器和你原版一模一样 */
+.swiper-container-diary-me,
+.swiper-container-diary-you {
+    width: 100%;
+    height: 500px;
+}
+
+/* 日记卡片样式完全和 page1 保持一致 */
+.diary-card {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.diary-date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* 日记内容：自动换行 + 每段开头空两格 + 滚动 */
+.diary-content {
+    flex: 1;
+    overflow-y: auto;
+    font-size: 16px;
+    line-height: 1.9;
+    color: #333;
+    text-align: left;
+    padding-right: 5px;
+
+    white-space: pre-line;
+    word-break: break-all;
+    text-indent: 2em;
+}
+
+/* 滚动条美化 */
+.diary-content::-webkit-scrollbar {
+    width: 4px;
+}
+.diary-content::-webkit-scrollbar-thumb {
+    background: #ffadc0;
+    border-radius: 2px;
+}
+
+/* ===================== 分页7 - 原版3D立方体 ===================== */
+.page7 {
+    background-image: linear-gradient(to right, rgba(0, 162, 255, 0.4), rgba(255, 0, 255, 0.2)), url(../images/bg7.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+}
+
+.title-cube {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 30px;
+    /* 渐变背景 */
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    /* 背景放大，方便流动 */
+    background-size: 400% 100%;
+    /* 只在文字区域显示背景 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* 渐变流动动画 */
+    animation: rainbowFlow 6s linear infinite;
+}
+
+/* 渐变流动动画 */
+@keyframes rainbowFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.cube {
+    position: relative;
+    margin: 9% auto;
+    width: 200px;
+    height: 200px;
+    transform: rotateX(-30deg) rotateY(-80deg);
+    transform-style: preserve-3d;
+    animation: rotate 15s infinite;
+}
+
+.cube .outer-cube,
+.cube .inner-cube {
+    transform-style: preserve-3d;
+}
+
+@keyframes rotate {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.outer-cube .outer-top,
+.outer-cube .outer-bottom,
+.outer-cube .outer-right,
+.outer-cube .outer-left,
+.outer-cube .outer-front,
+.outer-cube .outer-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #fff;
+    opacity: 0.3;
+    transition: all .9s;
+}
+
+.outer-cube img {
+    width: 200px;
+    height: 200px;
+}
+
+.outer-top { transform: rotateX(90deg) translateZ(100px); }
+.outer-bottom { transform: rotateX(-90deg) translateZ(100px); }
+.outer-front { transform: rotateY(0deg) translateZ(100px); }
+.outer-back { transform: translateZ(-100px) rotateY(180deg); }
+.outer-left { transform: rotateY(90deg) translateZ(100px); }
+.outer-right { transform: rotateY(-90deg) translateZ(100px); }
+
+.inner-cube>div {
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    width: 130px;
+    height: 130px;
+}
+
+.inner-cube img {
+    width: 130px;
+    height: 130px;
+}
+
+.inner-top { transform: rotateX(90deg) translateZ(65px); }
+.inner-bottom { transform: rotateX(-90deg) translateZ(65px); }
+.inner-front { transform: rotateY(0deg) translateZ(65px); }
+.inner-back { transform: translateZ(-65px) rotateY(180deg); }
+.inner-left { transform: rotateY(90deg) translateZ(65px); }
+.inner-right { transform: rotateY(-90deg) translateZ(65px); }
+
+.cube:hover .outer-top {
+    right: -70px;
+    bottom: -70px;
+    opacity: 0.8;
+    transform: rotateX(90deg) translateZ(200px);
+}
+
+.cube:hover .outer-bottom {
+    right: -70px;
+    bottom: -70px;
+    opacity: 0.8;
+    transform: rotateX(-90deg) translateZ(200px);
+}
+
+.cube:hover .outer-front {
+    right: -70px;
+    bottom: -70px;
+    opacity: 0.8;
+    transform: rotateY(0deg) translateZ(200px);
+}
+
+.cube:hover .outer-back {
+    right: -70px;
+    bottom: -70px;
+    opacity: 0.8;
+    transform: translateZ(-200px) rotateY(180deg);
+}
+
+.cube:hover .outer-left {
+    right: -70px;
+    bottom: -70px;
+    opacity: 0.8;
+    transform: rotateY(90deg) translateZ(200px);
+}
+
+.cube:hover .outer-right {
+    right: -70px;
+    bottom: -70px;
+    opacity: 0.8;
+    transform: rotateY(-90deg) translateZ(200px);
+}
+
+.message {
+    text-align: center;
+}
+.message .tip {
+    color: white;
+    font-size: 18px;
+}
